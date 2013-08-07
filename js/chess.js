@@ -1,3 +1,7 @@
 $( "img" ).click(function() {
-      $( this ).parent().css('background-color', 'red');
+    if ($( this ).parent().css("background-color") !== "red") {
+        $( this ).parent().css({"background-color": "red"});
+    } else {
+        $( this ).parent().css({"background-color": "black"});
+    };
 });
