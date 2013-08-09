@@ -1,7 +1,9 @@
-$( "img" ).click(function() {
-    if ($( this ).parent().css("background-color") !== "red") {
-        $( this ).parent().css({"background-color": "red"});
+$( "img" ).click(function(evt) {
+    var $parent = $(evt.target).parent();
+    console.log($parent.css('background-color'));
+    if ($parent.css("background-color") !== "rgb(255, 0, 0)") {
+        $parent.css({"background-color": "red"});
     } else {
-        $( this ).parent().css({"background-color": "black"});
+        $parent.css({"background-color": $parent.hasClass("black") ? "grey" : "white" });
     };
 });
